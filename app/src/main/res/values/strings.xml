@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">dagger_arch</string>
+
+    <string name="main_screen_name">Main screen</string>
+    <string name="main_screen_to_scanner_button_name">To Scanner</string>
+    <string name="main_screen_to_at_button_name">To AntiTheft</string>
+
+    <string name="scanner_screen_name">Scanner screen</string>\
+    <string name="scanner_screen_do_scannerjob_button">Start antivirus scanning</string>
+    <string name="scanner_screen_do_scanner_name">Some Antivirus scanning job is doing</string>
+
+    <string name="antitheft_screen_name">Antitheft screen</string>
+    <string name="antitheft_screen_do_atjob_button">Start antitheft</string>
+    <string name="antitheft_screen_do_atjob_name">Some Antitheft job is doing</string>
+
+    <string name="purchase_buy_button">Buy me!</string>
+    <string name="purchase_buy_job_doing">Getting your money, bro</string>
 </resources>

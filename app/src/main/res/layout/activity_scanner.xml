@@ -14,23 +14,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:textSize="18pt"
-        android:text="@string/main_screen_name" />
+        android:text="@string/scanner_screen_name" />
 
     <Button
-        android:id="@+id/button_scanner"
-        android:layout_width="148dp"
+        android:id="@+id/button3"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="48dp"
-        android:text="@string/main_screen_to_scanner_button_name" />
+        android:text="@string/scanner_screen_do_scannerjob_button" />
 
     <Button
-        android:id="@+id/button_at"
-        android:layout_width="148dp"
+        android:id="@+id/button4"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/button_scanner"
+        android:layout_below="@+id/button3"
         android:layout_marginTop="24dp"
-        android:text="@string/main_screen_to_at_button_name" />
+        android:text="@string/purchase_buy_button" />
 </RelativeLayout>
