@@ -3,10 +3,10 @@ package com.example.eugene_matsyuk.dagger_arch;
 import android.app.Application;
 
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.app.AppModule;
 import com.example.eugene_matsyuk.dagger_arch.di.app.DaggerAppComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.app.DaggerPurchaseFeatureDependenciesComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.app.PurchaseFeatureDependenciesComponent;
+
+import com.example.eugene_matsyuk.dagger_arch.di.purchase.DaggerPurchaseFeatureDependenciesComponent;
+import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseFeatureDependenciesComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseComponent;
 import com.example.eugene_matsyuk.dagger_arch.presentation.main.routing.GlobalNavigator;
 
