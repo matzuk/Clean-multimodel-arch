@@ -5,6 +5,9 @@ import android.app.Application;
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppModule;
 import com.example.eugene_matsyuk.dagger_arch.di.app.DaggerAppComponent;
+import com.example.eugene_matsyuk.dagger_arch.di.app.DaggerPurchaseFeatureDependenciesComponent;
+import com.example.eugene_matsyuk.dagger_arch.di.app.PurchaseFeatureDependenciesComponent;
+import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseComponent;
 import com.example.eugene_matsyuk.dagger_arch.presentation.main.routing.GlobalNavigator;
 
 import javax.inject.Inject;
@@ -31,6 +34,12 @@ public class DaggerArchApplication extends Application {
             .build());
         AppComponent.get().inject(this);
         mNavigatorHolder.setNavigator(mGlobalNavigator);
+
+        // some experiments
+        PurchaseFeatureDependenciesComponent purchaseFeatureDependenciesComponent = DaggerPurchaseFeatureDependenciesComponent.builder()
+            .globalAppApi(AppComponent.get())
+            .build();
+        PurchaseComponent purchaseComponent = PurchaseComponent.create(purchaseFeatureDependenciesComponent);
     }
 
 }

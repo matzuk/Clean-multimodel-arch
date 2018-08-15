@@ -17,7 +17,7 @@ import dagger.internal.Preconditions;
         GlobalNavigationModule.class
 })
 @Singleton
-public abstract class AppComponent {
+public abstract class AppComponent implements GlobalAppApi {
 
     private static volatile AppComponent sInstance;
 
