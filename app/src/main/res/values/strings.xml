@@ -8,11 +8,14 @@
     <string name="scanner_screen_name">Scanner screen</string>\
     <string name="scanner_screen_do_scannerjob_button">Start antivirus scanning</string>
     <string name="scanner_screen_do_scanner_name">Some Antivirus scanning job is doing</string>
+    <string name="scanner_screen_do_scanner_completed_name">Some Antivirus scanning job is completed</string>
 
     <string name="antitheft_screen_name">Antitheft screen</string>
     <string name="antitheft_screen_do_atjob_button">Start antitheft</string>
     <string name="antitheft_screen_do_atjob_name">Some Antitheft job is doing</string>
+    <string name="antitheft_screen_do_atjob_completed_name">Some Antitheft job is completed</string>
 
     <string name="purchase_buy_button">Buy me!</string>
     <string name="purchase_buy_job_doing">Getting your money, bro</string>
+    <string name="purchase_buy_job_completed">Your money are in our pocket, bro</string>
 </resources>

@@ -26,7 +26,7 @@ public class AntitheftInteractorImpl implements AntitheftInteractor {
     }
 
     private Single<AntitheftModel> doSomeLogic(AntitheftModel antitheftModel) {
-        return Single.timer(300, TimeUnit.MILLISECONDS)
+        return Single.timer(3000, TimeUnit.MILLISECONDS)
             .map(aLong -> antitheftModel);
     }
 

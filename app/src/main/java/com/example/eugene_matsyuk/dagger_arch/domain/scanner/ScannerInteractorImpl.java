@@ -26,7 +26,7 @@ public class ScannerInteractorImpl implements ScannerInteractor {
     }
 
     private Single<ScannerModel> doSomeLogic(ScannerModel scannerModel) {
-        return Single.timer(300, TimeUnit.MILLISECONDS)
+        return Single.timer(3000, TimeUnit.MILLISECONDS)
             .map(aLong -> scannerModel);
     }
 

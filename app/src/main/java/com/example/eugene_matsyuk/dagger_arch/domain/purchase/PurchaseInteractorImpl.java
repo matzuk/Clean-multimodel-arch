@@ -26,7 +26,7 @@ public class PurchaseInteractorImpl implements PurchaseInteractor {
     }
 
     private Single<PurchaseModel> doSomeLogic(PurchaseModel purchaseModel) {
-        return Single.timer(300, TimeUnit.MILLISECONDS)
+        return Single.timer(3000, TimeUnit.MILLISECONDS)
             .map(aLong -> purchaseModel);
     }
 

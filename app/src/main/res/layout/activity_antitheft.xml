@@ -17,7 +17,7 @@
         android:text="@string/antitheft_screen_name" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_at"
         android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -26,11 +26,11 @@
         android:text="@string/antitheft_screen_do_atjob_button" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_purchase"
         android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/button_at"
         android:layout_marginTop="24dp"
         android:text="@string/purchase_buy_button" />
 </RelativeLayout>
