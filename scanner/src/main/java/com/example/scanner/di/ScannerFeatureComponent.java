@@ -1,7 +1,7 @@
-package com.example.eugene_matsyuk.dagger_arch.di.scanner;
+package com.example.scanner.di;
 
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.presentation.scanner.view.ScannerActivity;
+import com.example.scanner.presentation.view.ScannerActivity;
 
 import dagger.Component;
 

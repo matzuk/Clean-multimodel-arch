@@ -7,14 +7,14 @@ import com.example.eugene_matsyuk.dagger_arch.di.antitheft.AntitheftFeatureCompo
 import com.example.eugene_matsyuk.dagger_arch.di.antitheft.AntitheftFeatureDependenciesComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.antitheft.DaggerAntitheftFeatureDependenciesComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.scanner.DaggerScannerFeatureDependenciesComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.scanner.ScannerFeatureComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.scanner.ScannerFeatureDependenciesComponent;
 import com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.view.AntitheftActivity;
-import com.example.eugene_matsyuk.dagger_arch.presentation.scanner.view.ScannerActivity;
 import com.example.purchase_impl.di.DaggerPurchaseFeatureDependenciesComponent;
 import com.example.purchase_impl.di.PurchaseComponent;
 import com.example.purchase_impl.di.PurchaseFeatureDependenciesComponent;
+import com.example.scanner.di.DaggerScannerFeatureDependenciesComponent;
+import com.example.scanner.di.ScannerFeatureComponent;
+import com.example.scanner.di.ScannerFeatureDependenciesComponent;
+import com.example.scanner.presentation.view.ScannerActivity;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

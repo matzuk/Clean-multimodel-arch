@@ -26,6 +26,7 @@ dependencies {
     implementation project(':core')
     implementation project(':purchase-api')
     implementation project(':purchase-impl')
+    implementation project(':scanner')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0-rc01'

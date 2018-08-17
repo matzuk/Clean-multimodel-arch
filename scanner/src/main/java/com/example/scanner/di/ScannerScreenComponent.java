@@ -1,7 +1,7 @@
-package com.example.eugene_matsyuk.dagger_arch.di.scanner;
+package com.example.scanner.di;
 
 import com.example.core.di.general.PerScreen;
-import com.example.eugene_matsyuk.dagger_arch.presentation.scanner.presenter.ScannerPresenter;
+import com.example.scanner.presentation.presenter.ScannerPresenter;
 
 import dagger.Subcomponent;
 

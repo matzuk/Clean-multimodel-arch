@@ -1,7 +1,7 @@
-package com.example.eugene_matsyuk.dagger_arch.domain.scanner;
+package com.example.scanner.domain;
 
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.domain.scanner.models.ScannerModel;
+import com.example.scanner.domain.models.ScannerModel;
 
 import java.util.concurrent.TimeUnit;
 

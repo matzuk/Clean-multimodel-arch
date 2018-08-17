@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.di.scanner;
+package com.example.scanner.di;
 
 import com.example.core.data.db.DbClient;
 import com.example.core.data.network.HttpClient;

@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.presentation.scanner.view;
+package com.example.scanner.presentation.view;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -6,9 +6,9 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
-import com.example.eugene_matsyuk.dagger_arch.R;
-import com.example.eugene_matsyuk.dagger_arch.di.scanner.ScannerFeatureComponent;
-import com.example.eugene_matsyuk.dagger_arch.presentation.scanner.presenter.ScannerPresenter;
+import com.example.scanner.R;
+import com.example.scanner.di.ScannerFeatureComponent;
+import com.example.scanner.presentation.presenter.ScannerPresenter;
 
 public class ScannerActivity extends MvpAppCompatActivity implements ScannerView {
 

@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".presentation.antitheft.view.AntitheftActivity">
         </activity>
-        <activity android:name=".presentation.scanner.view.ScannerActivity">
+        <activity android:name="com.example.scanner.presentation.view.ScannerActivity">
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.presentation.scanner.view;
+package com.example.scanner.presentation.view;
 
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;

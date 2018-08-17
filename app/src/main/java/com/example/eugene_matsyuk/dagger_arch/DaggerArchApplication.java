@@ -2,6 +2,7 @@ package com.example.eugene_matsyuk.dagger_arch;
 
 import android.app.Application;
 
+import com.arellomobile.mvp.RegisterMoxyReflectorPackages;
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.app.DaggerAppComponent;
 import com.example.eugene_matsyuk.dagger_arch.routing.GlobalNavigator;
@@ -13,6 +14,7 @@ import ru.terrakok.cicerone.NavigatorHolder;
 
 import static com.example.eugene_matsyuk.dagger_arch.di.DiConstants.GLOBAL;
 
+@RegisterMoxyReflectorPackages({"com.example.scanner"})
 public class DaggerArchApplication extends Application {
 
     @Inject

@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.di.scanner;
+package com.example.scanner.di;
 
 import com.example.core.di.app.GlobalAppApi;
 import com.example.purchase_api.di.PurchaseFeatureApi;

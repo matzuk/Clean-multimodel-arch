@@ -1,10 +1,10 @@
-package com.example.eugene_matsyuk.dagger_arch.di.scanner;
+package com.example.scanner.di;
 
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.scanner.ScannerRepositoryImpl;
-import com.example.eugene_matsyuk.dagger_arch.domain.scanner.ScannerInteractor;
-import com.example.eugene_matsyuk.dagger_arch.domain.scanner.ScannerInteractorImpl;
-import com.example.eugene_matsyuk.dagger_arch.domain.scanner.ScannerRepository;
+import com.example.scanner.data.ScannerRepositoryImpl;
+import com.example.scanner.domain.ScannerInteractor;
+import com.example.scanner.domain.ScannerInteractorImpl;
+import com.example.scanner.domain.ScannerRepository;
 
 import dagger.Binds;
 import dagger.Module;
