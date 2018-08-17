@@ -4,11 +4,10 @@ import android.app.Application;
 
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.app.DaggerAppComponent;
-
 import com.example.eugene_matsyuk.dagger_arch.di.purchase.DaggerPurchaseFeatureDependenciesComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseFeatureDependenciesComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseComponent;
-import com.example.eugene_matsyuk.dagger_arch.presentation.main.routing.GlobalNavigator;
+import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseFeatureDependenciesComponent;
+import com.example.eugene_matsyuk.dagger_arch.routing.GlobalNavigator;
 
 import javax.inject.Inject;
 import javax.inject.Named;

@@ -10,8 +10,8 @@ import javax.inject.Named;
 import ru.terrakok.cicerone.Router;
 
 import static com.example.eugene_matsyuk.dagger_arch.di.DiConstants.GLOBAL;
-import static com.example.eugene_matsyuk.dagger_arch.presentation.main.routing.GlobalScreenNames.AV_SCREEN;
-import static com.example.eugene_matsyuk.dagger_arch.presentation.main.routing.GlobalScreenNames.SCANNER_SCREEN;
+import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.AV_SCREEN;
+import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.SCANNER_SCREEN;
 
 @InjectViewState
 public class MainPresenter extends MvpPresenter<MainView> {

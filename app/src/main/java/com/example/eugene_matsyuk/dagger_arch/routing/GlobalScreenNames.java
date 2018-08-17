@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.presentation.main.routing;
+package com.example.eugene_matsyuk.dagger_arch.routing;
 
 public class GlobalScreenNames {
 

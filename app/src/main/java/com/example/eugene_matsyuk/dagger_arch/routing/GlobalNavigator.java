@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.presentation.main.routing;
+package com.example.eugene_matsyuk.dagger_arch.routing;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,8 +20,8 @@ import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.commands.Command;
 import ru.terrakok.cicerone.commands.Forward;
 
-import static com.example.eugene_matsyuk.dagger_arch.presentation.main.routing.GlobalScreenNames.AV_SCREEN;
-import static com.example.eugene_matsyuk.dagger_arch.presentation.main.routing.GlobalScreenNames.SCANNER_SCREEN;
+import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.AV_SCREEN;
+import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.SCANNER_SCREEN;
 
 @Singleton
 public class GlobalNavigator implements Navigator {
