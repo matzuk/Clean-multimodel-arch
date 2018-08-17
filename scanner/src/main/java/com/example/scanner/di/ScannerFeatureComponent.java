@@ -11,9 +11,9 @@ public abstract class ScannerFeatureComponent {
 
     private static volatile ScannerFeatureComponent sScannerFeatureComponent;
 
-    public static void init(ScannerFeatureDependenciesComponent scannerFeatureDependenciesComponent) {
+    public static void init(ScannerFeatureDependencies scannerFeatureDependencies) {
         sScannerFeatureComponent = DaggerScannerFeatureComponent.builder()
-            .scannerFeatureDependencies(scannerFeatureDependenciesComponent)
+            .scannerFeatureDependencies(scannerFeatureDependencies)
             .build();
     }
 

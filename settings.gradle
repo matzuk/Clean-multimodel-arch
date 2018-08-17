@@ -1,4 +1,4 @@
-include ':app',
+include ':app', ':scanner_example',
         ':core',
         ':scanner',
         ':purchase-api',
