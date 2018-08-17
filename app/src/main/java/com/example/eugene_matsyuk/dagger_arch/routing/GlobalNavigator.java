@@ -10,6 +10,9 @@ import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.purchase.DaggerPurchaseFeatureDependenciesComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseFeatureDependenciesComponent;
+import com.example.eugene_matsyuk.dagger_arch.di.scanner.DaggerScannerFeatureDependenciesComponent;
+import com.example.eugene_matsyuk.dagger_arch.di.scanner.ScannerFeatureComponent;
+import com.example.eugene_matsyuk.dagger_arch.di.scanner.ScannerFeatureDependenciesComponent;
 import com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.view.AntitheftActivity;
 import com.example.eugene_matsyuk.dagger_arch.presentation.scanner.view.ScannerActivity;
 
@@ -54,6 +57,7 @@ public class GlobalNavigator implements Navigator {
         switch (name) {
             case SCANNER_SCREEN:
                 cls = ScannerActivity.class;
+                initDependenciesForScanner();
                 break;
             case AV_SCREEN:
                 cls = AntitheftActivity.class;
@@ -68,17 +72,26 @@ public class GlobalNavigator implements Navigator {
     }
 
     private void initDependenciesForAt() {
+        AntitheftFeatureDependenciesComponent antitheftFeatureDependenciesComponent = DaggerAntitheftFeatureDependenciesComponent.builder()
+            .globalAppApi(AppComponent.get())
+            .purchaseFeatureApi(createPurchaseComponent())
+            .build();
+        AntitheftFeatureComponent.setAntitheftFeatureDependencies(antitheftFeatureDependenciesComponent);
+    }
+
+    private PurchaseComponent createPurchaseComponent() {
         PurchaseFeatureDependenciesComponent purchaseFeatureDependenciesComponent = DaggerPurchaseFeatureDependenciesComponent.builder()
             .globalAppApi(AppComponent.get())
             .build();
-        PurchaseComponent purchaseComponent = PurchaseComponent.create(purchaseFeatureDependenciesComponent);
+        return PurchaseComponent.create(purchaseFeatureDependenciesComponent);
+    }
 
-        AntitheftFeatureDependenciesComponent antitheftFeatureDependenciesComponent = DaggerAntitheftFeatureDependenciesComponent.builder()
+    private void initDependenciesForScanner() {
+        ScannerFeatureDependenciesComponent scannerFeatureDependenciesComponent = DaggerScannerFeatureDependenciesComponent.builder()
             .globalAppApi(AppComponent.get())
-            .purchaseFeatureApi(purchaseComponent)
+            .purchaseFeatureApi(createPurchaseComponent())
             .build();
-
-        AntitheftFeatureComponent.setAntitheftFeatureDependencies(antitheftFeatureDependenciesComponent);
+        ScannerFeatureComponent.setScannerFeatureDependencies(scannerFeatureDependenciesComponent);
     }
 
 

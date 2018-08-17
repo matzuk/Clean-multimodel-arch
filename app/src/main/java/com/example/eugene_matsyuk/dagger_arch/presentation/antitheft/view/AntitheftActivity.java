@@ -53,7 +53,7 @@ public class AntitheftActivity extends MvpAppCompatActivity implements Antitheft
     @Override
     public void onPause() {
         if (isFinishing()) {
-            AntitheftFeatureComponent.resetComponent();
+            AntitheftFeatureComponent.get().resetComponent();
         }
         super.onPause();
     }

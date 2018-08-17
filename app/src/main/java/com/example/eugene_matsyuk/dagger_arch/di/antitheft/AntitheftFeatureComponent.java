@@ -17,6 +17,9 @@ public abstract class AntitheftFeatureComponent {
     }
 
     public static AntitheftFeatureComponent get() {
+        if (sAntitheftFeatureDependencies == null) {
+            throw new RuntimeException("You must call setAntitheftFeatureDependencies(...) first before get() calling");
+        }
         if (sAntitheftFeatureComponent == null) {
             synchronized (AntitheftFeatureComponent.class) {
                 if (sAntitheftFeatureComponent == null) {
@@ -34,7 +37,7 @@ public abstract class AntitheftFeatureComponent {
 
     }
 
-    public static void resetComponent() {
+    public void resetComponent() {
         sAntitheftFeatureDependencies = null;
         sAntitheftFeatureComponent = null;
     }

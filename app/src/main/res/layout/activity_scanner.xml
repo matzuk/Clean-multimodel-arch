@@ -17,7 +17,7 @@
         android:text="@string/scanner_screen_name" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_scanner"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -26,11 +26,11 @@
         android:text="@string/scanner_screen_do_scannerjob_button" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_purchase"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/button_scanner"
         android:layout_marginTop="24dp"
         android:text="@string/purchase_buy_button" />
 </RelativeLayout>
