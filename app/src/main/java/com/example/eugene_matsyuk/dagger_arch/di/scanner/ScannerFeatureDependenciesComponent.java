@@ -1,7 +1,7 @@
 package com.example.eugene_matsyuk.dagger_arch.di.scanner;
 
 import com.example.core.di.app.GlobalAppApi;
-import com.example.eugene_matsyuk.dagger_arch.di.purchase.PurchaseFeatureApi;
+import com.example.purchase_api.di.PurchaseFeatureApi;
 
 import dagger.Component;
 

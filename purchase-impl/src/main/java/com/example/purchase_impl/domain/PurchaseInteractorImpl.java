@@ -1,7 +1,8 @@
-package com.example.eugene_matsyuk.dagger_arch.domain.purchase;
+package com.example.purchase_impl.domain;
 
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.domain.purchase.models.PurchaseModel;
+import com.example.purchase_api.domain.PurchaseInteractor;
+import com.example.purchase_api.domain.models.PurchaseModel;
 
 import java.util.concurrent.TimeUnit;
 

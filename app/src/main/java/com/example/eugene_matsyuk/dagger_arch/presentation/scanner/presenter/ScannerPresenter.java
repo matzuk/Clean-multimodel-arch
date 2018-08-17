@@ -4,9 +4,9 @@ import android.annotation.SuppressLint;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseInteractor;
 import com.example.eugene_matsyuk.dagger_arch.domain.scanner.ScannerInteractor;
 import com.example.eugene_matsyuk.dagger_arch.presentation.scanner.view.ScannerView;
+import com.example.purchase_api.domain.PurchaseInteractor;
 
 import javax.inject.Inject;
 

@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.di.purchase;
+package com.example.purchase_impl.di;
 
 import com.example.core.data.network.HttpClient;
 

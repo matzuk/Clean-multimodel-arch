@@ -1,6 +1,7 @@
-package com.example.eugene_matsyuk.dagger_arch.di.purchase;
+package com.example.purchase_impl.di;
 
 import com.example.core.di.general.PerFeature;
+import com.example.purchase_api.di.PurchaseFeatureApi;
 
 import dagger.Component;
 

@@ -1,10 +1,10 @@
-package com.example.eugene_matsyuk.dagger_arch.di.purchase;
+package com.example.purchase_impl.di;
 
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.purchase.PurchaseRepositoryImpl;
-import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseInteractor;
-import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseInteractorImpl;
-import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseRepository;
+import com.example.purchase_api.domain.PurchaseInteractor;
+import com.example.purchase_impl.data.PurchaseRepositoryImpl;
+import com.example.purchase_impl.domain.PurchaseInteractorImpl;
+import com.example.purchase_impl.domain.PurchaseRepository;
 
 import dagger.Binds;
 import dagger.Module;

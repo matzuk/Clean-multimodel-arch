@@ -1,9 +1,9 @@
-package com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.purchase;
+package com.example.purchase_impl.data;
 
 import com.example.core.data.network.HttpClient;
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseRepository;
-import com.example.eugene_matsyuk.dagger_arch.domain.purchase.models.PurchaseModel;
+import com.example.purchase_api.domain.models.PurchaseModel;
+import com.example.purchase_impl.domain.PurchaseRepository;
 
 import javax.inject.Inject;
 
