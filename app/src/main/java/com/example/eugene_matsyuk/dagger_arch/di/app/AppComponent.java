@@ -3,6 +3,7 @@ package com.example.eugene_matsyuk.dagger_arch.di.app;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.example.core.di.app.GlobalAppApi;
 import com.example.eugene_matsyuk.dagger_arch.DaggerArchApplication;
 import com.example.eugene_matsyuk.dagger_arch.presentation.main.view.MainActivity;
 

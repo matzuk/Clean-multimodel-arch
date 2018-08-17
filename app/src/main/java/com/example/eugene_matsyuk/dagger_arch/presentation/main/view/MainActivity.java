@@ -1,10 +1,8 @@
 package com.example.eugene_matsyuk.dagger_arch.presentation.main.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
-import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.example.eugene_matsyuk.dagger_arch.R;

@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.data.network;
+package com.example.core.data.network;
 
 import java.util.concurrent.TimeUnit;
 

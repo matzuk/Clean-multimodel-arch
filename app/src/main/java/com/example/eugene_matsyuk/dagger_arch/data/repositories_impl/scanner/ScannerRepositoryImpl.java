@@ -1,11 +1,11 @@
 package com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.scanner;
 
-import com.example.eugene_matsyuk.dagger_arch.data.db.DbClient;
-import com.example.eugene_matsyuk.dagger_arch.data.network.HttpClient;
-import com.example.eugene_matsyuk.dagger_arch.di.general.PerFeature;
+import com.example.core.data.db.DbClient;
+import com.example.core.data.network.HttpClient;
+import com.example.core.di.general.PerFeature;
+import com.example.core.utils.SomeUtils;
 import com.example.eugene_matsyuk.dagger_arch.domain.scanner.ScannerRepository;
 import com.example.eugene_matsyuk.dagger_arch.domain.scanner.models.ScannerModel;
-import com.example.eugene_matsyuk.dagger_arch.utils.SomeUtils;
 
 import javax.inject.Inject;
 

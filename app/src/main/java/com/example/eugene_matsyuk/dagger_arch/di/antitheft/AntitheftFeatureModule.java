@@ -1,7 +1,7 @@
 package com.example.eugene_matsyuk.dagger_arch.di.antitheft;
 
+import com.example.core.di.general.PerFeature;
 import com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.antitheft.AntitheftRepositoryImpl;
-import com.example.eugene_matsyuk.dagger_arch.di.general.PerFeature;
 import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftInteractor;
 import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftInteractorImpl;
 import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftRepository;

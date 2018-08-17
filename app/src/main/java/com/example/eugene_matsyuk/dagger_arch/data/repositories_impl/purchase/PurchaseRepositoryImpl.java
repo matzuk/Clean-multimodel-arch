@@ -1,7 +1,7 @@
 package com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.purchase;
 
-import com.example.eugene_matsyuk.dagger_arch.data.network.HttpClient;
-import com.example.eugene_matsyuk.dagger_arch.di.general.PerFeature;
+import com.example.core.data.network.HttpClient;
+import com.example.core.di.general.PerFeature;
 import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseRepository;
 import com.example.eugene_matsyuk.dagger_arch.domain.purchase.models.PurchaseModel;
 

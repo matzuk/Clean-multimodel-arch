@@ -1,6 +1,6 @@
 package com.example.eugene_matsyuk.dagger_arch.di.antitheft;
 
-import com.example.eugene_matsyuk.dagger_arch.di.general.PerScreen;
+import com.example.core.di.general.PerScreen;
 import com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.presenter.AntitheftPresenter;
 
 import dagger.Subcomponent;

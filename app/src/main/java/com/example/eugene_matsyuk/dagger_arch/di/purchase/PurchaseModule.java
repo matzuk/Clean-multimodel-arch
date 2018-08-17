@@ -1,7 +1,7 @@
 package com.example.eugene_matsyuk.dagger_arch.di.purchase;
 
+import com.example.core.di.general.PerFeature;
 import com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.purchase.PurchaseRepositoryImpl;
-import com.example.eugene_matsyuk.dagger_arch.di.general.PerFeature;
 import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseInteractor;
 import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseInteractorImpl;
 import com.example.eugene_matsyuk.dagger_arch.domain.purchase.PurchaseRepository;

@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.data.db;
+package com.example.core.data.db;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

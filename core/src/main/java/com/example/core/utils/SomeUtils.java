@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.utils;
+package com.example.core.utils;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

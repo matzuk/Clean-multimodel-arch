@@ -1,6 +1,6 @@
 package com.example.eugene_matsyuk.dagger_arch.di.purchase;
 
-import com.example.eugene_matsyuk.dagger_arch.data.network.HttpClient;
+import com.example.core.data.network.HttpClient;
 
 public interface PurchaseFeatureDependencies {
 
