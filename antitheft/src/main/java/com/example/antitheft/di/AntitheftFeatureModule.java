@@ -1,10 +1,10 @@
-package com.example.eugene_matsyuk.dagger_arch.di.antitheft;
+package com.example.antitheft.di;
 
+import com.example.antitheft.data.repositories_impl.AntitheftRepositoryImpl;
+import com.example.antitheft.domain.AntitheftInteractor;
+import com.example.antitheft.domain.AntitheftInteractorImpl;
+import com.example.antitheft.domain.AntitheftRepository;
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.antitheft.AntitheftRepositoryImpl;
-import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftInteractor;
-import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftInteractorImpl;
-import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftRepository;
 
 import dagger.Binds;
 import dagger.Module;

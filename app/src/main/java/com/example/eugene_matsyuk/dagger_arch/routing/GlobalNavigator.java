@@ -3,11 +3,11 @@ package com.example.eugene_matsyuk.dagger_arch.routing;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.eugene_matsyuk.dagger_arch.di.antitheft.AntitheftFeatureComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.antitheft.AntitheftFeatureDependenciesComponent;
-import com.example.eugene_matsyuk.dagger_arch.di.antitheft.DaggerAntitheftFeatureDependenciesComponent;
+import com.example.antitheft.di.AntitheftFeatureComponent;
+import com.example.antitheft.di.AntitheftFeatureDependenciesComponent;
+import com.example.antitheft.di.DaggerAntitheftFeatureDependenciesComponent;
+import com.example.antitheft.presentation.view.AntitheftActivity;
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
-import com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.view.AntitheftActivity;
 import com.example.purchase_impl.di.DaggerPurchaseFeatureDependenciesComponent;
 import com.example.purchase_impl.di.PurchaseComponent;
 import com.example.purchase_impl.di.PurchaseFeatureDependenciesComponent;

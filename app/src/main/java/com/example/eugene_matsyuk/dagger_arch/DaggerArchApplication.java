@@ -14,7 +14,7 @@ import ru.terrakok.cicerone.NavigatorHolder;
 
 import static com.example.eugene_matsyuk.dagger_arch.di.DiConstants.GLOBAL;
 
-@RegisterMoxyReflectorPackages({"com.example.scanner"})
+@RegisterMoxyReflectorPackages({"com.example.scanner", "com.example.antitheft"})
 public class DaggerArchApplication extends Application {
 
     @Inject

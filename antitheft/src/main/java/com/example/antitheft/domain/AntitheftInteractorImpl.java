@@ -1,7 +1,7 @@
-package com.example.eugene_matsyuk.dagger_arch.domain.antitheft;
+package com.example.antitheft.domain;
 
+import com.example.antitheft.domain.models.AntitheftModel;
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.models.AntitheftModel;
 
 import java.util.concurrent.TimeUnit;
 

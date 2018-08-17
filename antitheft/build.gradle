@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
@@ -12,6 +10,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moxyReflectorPackage : 'com.example.antitheft' ]
+            }
+        }
 
     }
 
@@ -22,13 +26,32 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
+    implementation project(':core')
+    implementation project(':purchase-api')
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // dagger
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation "com.google.dagger:dagger:${versions.dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${versions.dagger}"
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rxJava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
+    // moxy
+    implementation "com.arello-mobile:moxy:${versions.moxy}"
+    implementation "com.arello-mobile:moxy-app-compat:${versions.moxy}"
+    annotationProcessor "com.arello-mobile:moxy-compiler:${versions.moxy}"
 }

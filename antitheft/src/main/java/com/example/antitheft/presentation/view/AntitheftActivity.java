@@ -1,4 +1,4 @@
-package com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.view;
+package com.example.antitheft.presentation.view;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -6,9 +6,9 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
-import com.example.eugene_matsyuk.dagger_arch.R;
-import com.example.eugene_matsyuk.dagger_arch.di.antitheft.AntitheftFeatureComponent;
-import com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.presenter.AntitheftPresenter;
+import com.example.antitheft.R;
+import com.example.antitheft.di.AntitheftFeatureComponent;
+import com.example.antitheft.presentation.presenter.AntitheftPresenter;
 
 public class AntitheftActivity extends MvpAppCompatActivity implements AntitheftView {
 

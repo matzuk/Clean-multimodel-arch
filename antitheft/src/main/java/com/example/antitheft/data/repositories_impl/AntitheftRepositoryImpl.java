@@ -1,10 +1,10 @@
-package com.example.eugene_matsyuk.dagger_arch.data.repositories_impl.antitheft;
+package com.example.antitheft.data.repositories_impl;
 
+import com.example.antitheft.domain.AntitheftRepository;
+import com.example.antitheft.domain.models.AntitheftModel;
 import com.example.core.data.db.DbClient;
 import com.example.core.data.network.HttpClient;
 import com.example.core.di.general.PerFeature;
-import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftRepository;
-import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.models.AntitheftModel;
 
 import javax.inject.Inject;
 

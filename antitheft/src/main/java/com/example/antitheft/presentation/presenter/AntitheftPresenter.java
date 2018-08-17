@@ -1,11 +1,11 @@
-package com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.presenter;
+package com.example.antitheft.presentation.presenter;
 
 import android.annotation.SuppressLint;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.example.eugene_matsyuk.dagger_arch.domain.antitheft.AntitheftInteractor;
-import com.example.eugene_matsyuk.dagger_arch.presentation.antitheft.view.AntitheftView;
+import com.example.antitheft.domain.AntitheftInteractor;
+import com.example.antitheft.presentation.view.AntitheftView;
 import com.example.purchase_api.domain.PurchaseInteractor;
 
 import javax.inject.Inject;

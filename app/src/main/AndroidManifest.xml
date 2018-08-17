@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.antitheft.view.AntitheftActivity">
+        <activity android:name="com.example.antitheft.presentation.view.AntitheftActivity">
         </activity>
         <activity android:name="com.example.scanner.presentation.view.ScannerActivity">
         </activity>
