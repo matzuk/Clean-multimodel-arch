@@ -9,36 +9,22 @@ import dagger.Component;
 @PerFeature
 public abstract class AntitheftFeatureComponent {
 
-    private static volatile AntitheftFeatureDependencies sAntitheftFeatureDependencies;
     private static volatile AntitheftFeatureComponent sAntitheftFeatureComponent;
 
-    public static void setAntitheftFeatureDependencies(AntitheftFeatureDependencies antitheftFeatureDependencies) {
-        sAntitheftFeatureDependencies = antitheftFeatureDependencies;
+    public static void init(AntitheftFeatureDependencies antitheftFeatureDependencies) {
+        sAntitheftFeatureComponent = DaggerAntitheftFeatureComponent.builder()
+            .antitheftFeatureDependencies(antitheftFeatureDependencies)
+            .build();
     }
 
     public static AntitheftFeatureComponent get() {
-        if (sAntitheftFeatureDependencies == null) {
-            throw new RuntimeException("You must call setAntitheftFeatureDependencies(...) first before get() calling");
-        }
         if (sAntitheftFeatureComponent == null) {
-            synchronized (AntitheftFeatureComponent.class) {
-                if (sAntitheftFeatureComponent == null) {
-                    sAntitheftFeatureComponent = createComponent(sAntitheftFeatureDependencies);
-                }
-            }
+            throw new RuntimeException("You must call 'init(AntitheftFeatureDependencies antitheftFeatureDependencies)' method");
         }
         return sAntitheftFeatureComponent;
     }
 
-    private static AntitheftFeatureComponent createComponent(AntitheftFeatureDependencies antitheftFeatureDependencies) {
-        return DaggerAntitheftFeatureComponent.builder()
-            .antitheftFeatureDependencies(antitheftFeatureDependencies)
-            .build();
-
-    }
-
     public void resetComponent() {
-        sAntitheftFeatureDependencies = null;
         sAntitheftFeatureComponent = null;
     }
 

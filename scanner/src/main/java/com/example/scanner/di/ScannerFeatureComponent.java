@@ -9,36 +9,22 @@ import dagger.Component;
 @PerFeature
 public abstract class ScannerFeatureComponent {
 
-    private static volatile ScannerFeatureDependencies sScannerFeatureDependencies;
     private static volatile ScannerFeatureComponent sScannerFeatureComponent;
 
-    public static void setScannerFeatureDependencies(ScannerFeatureDependencies scannerFeatureDependencies) {
-        sScannerFeatureDependencies = scannerFeatureDependencies;
+    public static void init(ScannerFeatureDependenciesComponent scannerFeatureDependenciesComponent) {
+        sScannerFeatureComponent = DaggerScannerFeatureComponent.builder()
+            .scannerFeatureDependencies(scannerFeatureDependenciesComponent)
+            .build();
     }
 
     public static ScannerFeatureComponent get() {
-        if (sScannerFeatureDependencies == null) {
-            throw new RuntimeException("You must call setScannerFeatureDependencies(...) first before get() calling");
-        }
         if (sScannerFeatureComponent == null) {
-            synchronized (ScannerFeatureComponent.class) {
-                if (sScannerFeatureComponent == null) {
-                    sScannerFeatureComponent = createComponent(sScannerFeatureDependencies);
-                }
-            }
+            throw new RuntimeException("You must call 'init(ScannerFeatureDependenciesComponent scannerFeatureDependenciesComponent)' method");
         }
         return sScannerFeatureComponent;
     }
 
-    private static ScannerFeatureComponent createComponent(ScannerFeatureDependencies scannerFeatureDependencies) {
-        return DaggerScannerFeatureComponent.builder()
-            .scannerFeatureDependencies(scannerFeatureDependencies)
-            .build();
-
-    }
-
     public void resetComponent() {
-        sScannerFeatureDependencies = null;
         sScannerFeatureComponent = null;
     }
 
