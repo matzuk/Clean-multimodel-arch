@@ -1,1 +1,1 @@
-include ':app', ':core', ':scanner'
+include ':app', ':core', ':scanner', ':purchase-api', ':purchase-impl'
