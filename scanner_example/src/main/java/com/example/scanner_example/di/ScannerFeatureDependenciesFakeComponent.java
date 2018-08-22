@@ -19,8 +19,11 @@ import dagger.Component;
 @PerFeature
 public abstract class ScannerFeatureDependenciesFakeComponent implements ScannerFeatureDependencies {
 
-    public static ScannerFeatureDependencies create() {
+    public static ScannerFeatureDependencies create(CoreUtilsApi coreUtilsApi, CoreNetworkApi coreNetworkApi, CoreDbApi coreDbApi) {
         return DaggerScannerFeatureDependenciesFakeComponent.builder()
+            .coreDbApi(coreDbApi)
+            .coreNetworkApi(coreNetworkApi)
+            .coreUtilsApi(coreUtilsApi)
             .build();
     }
 
