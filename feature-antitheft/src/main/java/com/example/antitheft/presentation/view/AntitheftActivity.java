@@ -1,61 +1,66 @@
 package com.example.antitheft.presentation.view;
 
 import android.os.Bundle;
-import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
 
-import com.arellomobile.mvp.MvpAppCompatActivity;
-import com.arellomobile.mvp.presenter.InjectPresenter;
-import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.example.antitheft.R;
 import com.example.antitheft.di.AntitheftFeatureComponent;
-import com.example.antitheft.presentation.presenter.AntitheftPresenter;
+import com.example.antitheft.routing.AntitheftNavigator;
 
-public class AntitheftActivity extends MvpAppCompatActivity implements AntitheftView {
+import javax.inject.Inject;
 
-    @InjectPresenter
-    AntitheftPresenter mAntitheftPresenter;
+import ru.terrakok.cicerone.Navigator;
+import ru.terrakok.cicerone.NavigatorHolder;
+import ru.terrakok.cicerone.Router;
 
-    @ProvidePresenter
-    AntitheftPresenter provideAntitheftPresenter() {
-        return AntitheftFeatureComponent.get()
-            .antitheftScreenComponent()
-            .antitheftPresenter();
-    }
+import static com.example.antitheft.routing.AntitheftRoutingScreens.ANTITHEFT_MAIN;
+
+public class AntitheftActivity extends AppCompatActivity {
+
+    @Inject
+    NavigatorHolder mNavigatorHolder;
+    @Inject
+    Router mRouter;
+
+    private Navigator mNavigator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AntitheftFeatureComponent.get().inject(this);
+        mNavigator = new AntitheftNavigator(this, getSupportFragmentManager(), R.id.details);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_antitheft);
-        findViewById(R.id.button_purchase).setOnClickListener(v -> mAntitheftPresenter.clickToBuyWork());
-        findViewById(R.id.button_at).setOnClickListener(v -> mAntitheftPresenter.clickToAtWork());
+        if (savedInstanceState == null) {
+            mRouter.navigateTo(ANTITHEFT_MAIN);
+        }
     }
 
+    /**
+     * Attention: Use onResumeFragments() with FragmentActivity (more info)
+     * https://github.com/terrakok/Cicerone/issues/31
+     */
     @Override
-    public void showAtWork() {
-        Toast.makeText(this, R.string.antitheft_screen_do_atjob_name, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showAtSuccess() {
-        Toast.makeText(this, R.string.antitheft_screen_do_atjob_completed_name, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showBuyWork() {
-        Toast.makeText(this, R.string.purchase_buy_job_doing, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showBuySuccess() {
-        Toast.makeText(this, R.string.purchase_buy_job_completed, Toast.LENGTH_SHORT).show();
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        mNavigatorHolder.setNavigator(mNavigator);
     }
 
     @Override
     public void onPause() {
+        mNavigatorHolder.removeNavigator();
         if (isFinishing()) {
             AntitheftFeatureComponent.get().resetComponent();
         }
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() <= 1) {
+            finish();
+            return;
+        }
+        mRouter.exit();
     }
 
 }

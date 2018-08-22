@@ -5,7 +5,10 @@ import com.example.core.di.general.PerFeature;
 
 import dagger.Component;
 
-@Component(modules = AntitheftFeatureModule.class, dependencies = AntitheftFeatureDependencies.class)
+@Component(modules = {
+    AntitheftFeatureModule.class,
+    AntitheftNavigationModule.class
+}, dependencies = AntitheftFeatureDependencies.class)
 @PerFeature
 public abstract class AntitheftFeatureComponent {
 

@@ -12,17 +12,24 @@ import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import ru.terrakok.cicerone.Router;
+
+import static com.example.antitheft.routing.AntitheftRoutingScreens.ANTITHEFT_HELP;
 
 @InjectViewState
 public class AntitheftPresenter extends MvpPresenter<AntitheftView> {
 
     private final AntitheftInteractor mAntitheftInteractor;
     private final PurchaseInteractor mPurchaseInteractor;
+    private final Router mRouter;
 
     @Inject
-    public AntitheftPresenter(AntitheftInteractor antitheftInteractor, PurchaseInteractor purchaseInteractor) {
+    public AntitheftPresenter(AntitheftInteractor antitheftInteractor,
+                              PurchaseInteractor purchaseInteractor,
+                              Router router) {
         mAntitheftInteractor = antitheftInteractor;
         mPurchaseInteractor = purchaseInteractor;
+        mRouter = router;
     }
 
     @SuppressLint("CheckResult")
@@ -43,6 +50,10 @@ public class AntitheftPresenter extends MvpPresenter<AntitheftView> {
             .doOnSubscribe(disposable -> getViewState().showBuyWork())
             .doOnSuccess(antitheftModel -> getViewState().showBuySuccess())
             .subscribe(antitheftModel -> {}, throwable -> {});
+    }
+
+    public void clickToHelp() {
+        mRouter.navigateTo(ANTITHEFT_HELP);
     }
 
 }
