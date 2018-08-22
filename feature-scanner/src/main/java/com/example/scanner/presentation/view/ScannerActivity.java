@@ -1,61 +1,66 @@
 package com.example.scanner.presentation.view;
 
 import android.os.Bundle;
-import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
 
-import com.arellomobile.mvp.MvpAppCompatActivity;
-import com.arellomobile.mvp.presenter.InjectPresenter;
-import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.example.scanner.R;
 import com.example.scanner.di.ScannerFeatureComponent;
-import com.example.scanner.presentation.presenter.ScannerPresenter;
+import com.example.scanner.routing.ScannerNavigator;
 
-public class ScannerActivity extends MvpAppCompatActivity implements ScannerView {
+import javax.inject.Inject;
 
-    @InjectPresenter
-    ScannerPresenter mScannerPresenter;
+import ru.terrakok.cicerone.Navigator;
+import ru.terrakok.cicerone.NavigatorHolder;
+import ru.terrakok.cicerone.Router;
 
-    @ProvidePresenter
-    ScannerPresenter provideScannerPresenter() {
-        return ScannerFeatureComponent.get()
-            .scannerScreenComponent()
-            .scannerPresenter();
-    }
+import static com.example.scanner.routing.ScannerRoutingScreens.SCANNER_MAIN;
+
+public class ScannerActivity extends AppCompatActivity {
+
+    @Inject
+    NavigatorHolder mNavigatorHolder;
+    @Inject
+    Router mRouter;
+
+    private Navigator mNavigator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ScannerFeatureComponent.get().inject(this);
+        mNavigator = new ScannerNavigator(this, getSupportFragmentManager(), R.id.details);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
-        findViewById(R.id.button_purchase).setOnClickListener(v -> mScannerPresenter.clickToBuyWork());
-        findViewById(R.id.button_scanner).setOnClickListener(v -> mScannerPresenter.clickToAtWork());
+        if (savedInstanceState == null) {
+            mRouter.navigateTo(SCANNER_MAIN);
+        }
     }
 
+    /**
+     * Attention: Use onResumeFragments() with FragmentActivity (more info)
+     * https://github.com/terrakok/Cicerone/issues/31
+     */
     @Override
-    public void showScannerWork() {
-        Toast.makeText(this, R.string.scanner_screen_do_scanner_name, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showScannerSuccess() {
-        Toast.makeText(this, R.string.scanner_screen_do_scanner_completed_name, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showBuyWork() {
-        Toast.makeText(this, R.string.purchase_buy_job_doing, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showBuySuccess() {
-        Toast.makeText(this, R.string.purchase_buy_job_completed, Toast.LENGTH_SHORT).show();
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        mNavigatorHolder.setNavigator(mNavigator);
     }
 
     @Override
     public void onPause() {
+        mNavigatorHolder.removeNavigator();
         if (isFinishing()) {
             ScannerFeatureComponent.get().resetComponent();
         }
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() <= 1) {
+            finish();
+            return;
+        }
+        mRouter.exit();
     }
 
 }

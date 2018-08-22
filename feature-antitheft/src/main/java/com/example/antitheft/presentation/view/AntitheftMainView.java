@@ -4,7 +4,7 @@ import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
-public interface AntitheftView extends MvpView {
+public interface AntitheftMainView extends MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void showAtWork();

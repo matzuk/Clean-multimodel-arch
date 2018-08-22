@@ -56,4 +56,6 @@ dependencies {
     implementation "com.arello-mobile:moxy:${versions.moxy}"
     implementation "com.arello-mobile:moxy-app-compat:${versions.moxy}"
     annotationProcessor "com.arello-mobile:moxy-compiler:${versions.moxy}"
+    // cicerone
+    implementation "ru.terrakok.cicerone:cicerone:${versions.cicerone}"
 }

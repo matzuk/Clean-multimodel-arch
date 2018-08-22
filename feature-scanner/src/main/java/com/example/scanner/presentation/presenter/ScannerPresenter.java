@@ -6,27 +6,34 @@ import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 import com.example.purchase_api.domain.PurchaseInteractor;
 import com.example.scanner.domain.ScannerInteractor;
-import com.example.scanner.presentation.view.ScannerView;
+import com.example.scanner.presentation.view.ScannerMainView;
 
 import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import ru.terrakok.cicerone.Router;
+
+import static com.example.scanner.routing.ScannerRoutingScreens.SCANNER_HELP;
 
 @InjectViewState
-public class ScannerPresenter extends MvpPresenter<ScannerView> {
+public class ScannerPresenter extends MvpPresenter<ScannerMainView> {
 
     private final ScannerInteractor mScannerInteractor;
     private final PurchaseInteractor mPurchaseInteractor;
+    private final Router mRouter;
 
     @Inject
-    public ScannerPresenter(ScannerInteractor scannerInteractor, PurchaseInteractor purchaseInteractor) {
+    public ScannerPresenter(ScannerInteractor scannerInteractor,
+                            PurchaseInteractor purchaseInteractor,
+                            Router router) {
         mScannerInteractor = scannerInteractor;
         mPurchaseInteractor = purchaseInteractor;
+        mRouter = router;
     }
 
     @SuppressLint("CheckResult")
-    public void clickToAtWork() {
+    public void clickToScannerWork() {
         mScannerInteractor.doScannerWork()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -43,6 +50,10 @@ public class ScannerPresenter extends MvpPresenter<ScannerView> {
             .doOnSubscribe(disposable -> getViewState().showBuyWork())
             .doOnSuccess(antitheftModel -> getViewState().showBuySuccess())
             .subscribe(antitheftModel -> {}, throwable -> {});
+    }
+
+    public void clickToHelp() {
+        mRouter.navigateTo(SCANNER_HELP);
     }
 
 }

@@ -5,7 +5,10 @@ import com.example.scanner.presentation.view.ScannerActivity;
 
 import dagger.Component;
 
-@Component(modules = ScannerFeatureModule.class, dependencies = ScannerFeatureDependencies.class)
+@Component(modules = {
+    ScannerFeatureModule.class,
+    ScreenNavigationModule.class
+}, dependencies = ScannerFeatureDependencies.class)
 @PerFeature
 public abstract class ScannerFeatureComponent {
 

@@ -14,7 +14,7 @@ import com.example.antitheft.R;
 import com.example.antitheft.di.AntitheftFeatureComponent;
 import com.example.antitheft.presentation.presenter.AntitheftPresenter;
 
-public class AntitheftMainFragment extends MvpAppCompatFragment implements AntitheftView {
+public class AntitheftMainFragment extends MvpAppCompatFragment implements AntitheftMainView {
 
     @InjectPresenter
     AntitheftPresenter mAntitheftPresenter;

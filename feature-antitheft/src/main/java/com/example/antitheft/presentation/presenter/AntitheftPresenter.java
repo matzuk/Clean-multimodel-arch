@@ -5,7 +5,7 @@ import android.annotation.SuppressLint;
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 import com.example.antitheft.domain.AntitheftInteractor;
-import com.example.antitheft.presentation.view.AntitheftView;
+import com.example.antitheft.presentation.view.AntitheftMainView;
 import com.example.purchase_api.domain.PurchaseInteractor;
 
 import javax.inject.Inject;
@@ -17,7 +17,7 @@ import ru.terrakok.cicerone.Router;
 import static com.example.antitheft.routing.AntitheftRoutingScreens.ANTITHEFT_HELP;
 
 @InjectViewState
-public class AntitheftPresenter extends MvpPresenter<AntitheftView> {
+public class AntitheftPresenter extends MvpPresenter<AntitheftMainView> {
 
     private final AntitheftInteractor mAntitheftInteractor;
     private final PurchaseInteractor mPurchaseInteractor;

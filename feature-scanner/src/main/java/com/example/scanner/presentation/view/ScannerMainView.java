@@ -4,7 +4,7 @@ import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
-public interface ScannerView extends MvpView {
+public interface ScannerMainView extends MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void showScannerWork();
