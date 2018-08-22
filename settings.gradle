@@ -1,6 +1,6 @@
-include ':app', ':scanner_example', ':core-network-api', ':core-network-impl', ':core-db-api', ':core-db-impl',
+include ':app', ':feature-scanner-example', ':core-network-api', ':core-network-impl', ':core-db-api', ':core-db-impl',
         ':core-utils',
-        ':scanner',
-        ':purchase-api',
-        ':purchase-impl',
-        ':antitheft'
+        ':feature-scanner',
+        ':feature-purchase-api',
+        ':feature-purchase-impl',
+        ':feature-antitheft'

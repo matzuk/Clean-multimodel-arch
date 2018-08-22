@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
@@ -12,6 +10,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moxyReflectorPackage : 'com.example.scanner' ]
+            }
+        }
 
     }
 
@@ -32,7 +36,8 @@ android {
 dependencies {
     implementation project(':core-utils')
     implementation project(':core-network-api')
-    implementation project(':purchase-api')
+    implementation project(':core-db-api')
+    implementation project(':feature-purchase-api')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -47,4 +52,8 @@ dependencies {
     // RxJava
     implementation "io.reactivex.rxjava2:rxjava:${versions.rxJava}"
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
+    // moxy
+    implementation "com.arello-mobile:moxy:${versions.moxy}"
+    implementation "com.arello-mobile:moxy-app-compat:${versions.moxy}"
+    annotationProcessor "com.arello-mobile:moxy-compiler:${versions.moxy}"
 }
