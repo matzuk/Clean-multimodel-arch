@@ -72,6 +72,8 @@ public class GlobalNavigator implements Navigator {
         AntitheftFeatureComponent.init(
             AntitheftFeatureDependenciesComponent.create(
                 AppComponent.get(),
+                AppComponent.get(),
+                AppComponent.get(),
                 createPurchaseComponent()
             )
         );
@@ -80,7 +82,7 @@ public class GlobalNavigator implements Navigator {
     private PurchaseComponent createPurchaseComponent() {
         return PurchaseComponent.create(
             DaggerPurchaseFeatureDependenciesComponent.builder()
-                .globalAppApi(AppComponent.get())
+                .coreNetworkApi(AppComponent.get())
                 .build()
         );
     }
@@ -88,6 +90,8 @@ public class GlobalNavigator implements Navigator {
     private void initDependenciesForScanner() {
         ScannerFeatureComponent.init(
             ScannerFeatureDependenciesComponent.create(
+                AppComponent.get(),
+                AppComponent.get(),
                 AppComponent.get(),
                 createPurchaseComponent()
             )

@@ -1,14 +1,14 @@
 package com.example.scanner.di;
 
-import com.example.core.data.db.DbClient;
-import com.example.core.data.network.HttpClient;
 import com.example.core.utils.SomeUtils;
+import com.example.core_db_api.data.DbClientApi;
+import com.example.core_network_api.data.HttpClientApi;
 import com.example.purchase_api.domain.PurchaseInteractor;
 
 public interface ScannerFeatureDependencies {
 
-    DbClient dbClient();
-    HttpClient httpClient();
+    DbClientApi dbClient();
+    HttpClientApi httpClient();
     SomeUtils someUtils();
     PurchaseInteractor purchaseInteractor();
 

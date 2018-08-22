@@ -23,7 +23,11 @@ android {
 }
 
 dependencies {
-    implementation project(':core')
+    implementation project(':core-utils')
+    implementation project(':core-db-api')
+    implementation project(':core-db-impl')
+    implementation project(':core-network-api')
+    implementation project(':core-network-impl')
     implementation project(':purchase-api')
     implementation project(':purchase-impl')
     implementation project(':scanner')

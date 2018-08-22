@@ -1,18 +1,18 @@
 package com.example.purchase_impl.di;
 
 
-import com.example.core.di.app.GlobalAppApi;
 import com.example.core.di.general.PerFeature;
+import com.example.core_network_api.di.CoreNetworkApi;
 
 import dagger.Component;
 
-@Component(dependencies = GlobalAppApi.class)
+@Component(dependencies = CoreNetworkApi.class)
 @PerFeature
 public abstract class PurchaseFeatureDependenciesComponent implements PurchaseFeatureDependencies {
 
-    public static PurchaseFeatureDependenciesComponent create(GlobalAppApi globalAppApi) {
+    public static PurchaseFeatureDependenciesComponent create(CoreNetworkApi coreNetworkApi) {
         return DaggerPurchaseFeatureDependenciesComponent.builder()
-            .globalAppApi(globalAppApi)
+            .coreNetworkApi(coreNetworkApi)
             .build();
     }
 

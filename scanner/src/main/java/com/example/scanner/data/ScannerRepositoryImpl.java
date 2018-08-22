@@ -1,9 +1,9 @@
 package com.example.scanner.data;
 
-import com.example.core.data.db.DbClient;
-import com.example.core.data.network.HttpClient;
 import com.example.core.di.general.PerFeature;
 import com.example.core.utils.SomeUtils;
+import com.example.core_db_api.data.DbClientApi;
+import com.example.core_network_api.data.HttpClientApi;
 import com.example.scanner.domain.ScannerRepository;
 import com.example.scanner.domain.models.ScannerModel;
 
@@ -14,12 +14,12 @@ import io.reactivex.Single;
 @PerFeature
 public class ScannerRepositoryImpl implements ScannerRepository {
 
-    private final HttpClient mHttpClient;
-    private final DbClient mDbClient;
+    private final HttpClientApi mHttpClient;
+    private final DbClientApi mDbClient;
     private final SomeUtils mSomeUtils;
 
     @Inject
-    public ScannerRepositoryImpl(HttpClient httpClient, DbClient dbClient, SomeUtils someUtils) {
+    public ScannerRepositoryImpl(HttpClientApi httpClient, DbClientApi dbClient, SomeUtils someUtils) {
         mHttpClient = httpClient;
         mDbClient = dbClient;
         mSomeUtils = someUtils;

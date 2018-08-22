@@ -1,24 +1,29 @@
 package com.example.eugene_matsyuk.dagger_arch.di.app;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.example.core.di.app.GlobalAppApi;
+import com.example.core.di.app.CoreUtilsApi;
+import com.example.core_db_api.di.CoreDbApi;
+import com.example.core_network_api.di.CoreNetworkApi;
 import com.example.eugene_matsyuk.dagger_arch.DaggerArchApplication;
 import com.example.eugene_matsyuk.dagger_arch.presentation.main.view.MainActivity;
 
 import javax.inject.Singleton;
 
-import dagger.BindsInstance;
 import dagger.Component;
 import dagger.internal.Preconditions;
 
-@Component(modules = {
-        AppModule.class,
-        GlobalNavigationModule.class
+@Component(
+    modules = {
+        GlobalNavigationModule.class,
+        AppModule.class
+}, dependencies = {
+        CoreUtilsApi.class,
+        CoreNetworkApi.class,
+        CoreDbApi.class
 })
 @Singleton
-public abstract class AppComponent implements GlobalAppApi {
+public abstract class AppComponent implements CoreUtilsApi, CoreNetworkApi, CoreDbApi {
 
     private static volatile AppComponent sInstance;
 
@@ -33,14 +38,6 @@ public abstract class AppComponent implements GlobalAppApi {
             throw new IllegalArgumentException("AppComponent is already initialized.");
         }
         sInstance = component;
-    }
-
-    @Component.Builder
-    public interface Builder {
-        @BindsInstance
-        Builder context(Context context);
-
-        AppComponent build();
     }
 
     public abstract void inject(MainActivity mainActivity);

@@ -1,5 +1,5 @@
-include ':app', ':scanner_example',
-        ':core',
+include ':app', ':scanner_example', ':core-network-api', ':core-network-impl', ':core-db-api', ':core-db-impl',
+        ':core-utils',
         ':scanner',
         ':purchase-api',
         ':purchase-impl',
