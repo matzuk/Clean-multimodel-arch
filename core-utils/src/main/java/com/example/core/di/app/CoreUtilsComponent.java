@@ -8,12 +8,17 @@ import dagger.Component;
 @Singleton
 public abstract class CoreUtilsComponent implements CoreUtilsApi {
 
-    /**
-     * Call only one time!
-     * @return CoreUtilsComponent
-     */
-    public static CoreUtilsComponent createOnce() {
-        return DaggerCoreUtilsComponent.builder().build();
+    private static volatile CoreUtilsComponent sCoreUtilsComponent;
+
+    public static CoreUtilsComponent get() {
+        if (sCoreUtilsComponent == null) {
+            synchronized (CoreUtilsComponent.class) {
+                if (sCoreUtilsComponent == null) {
+                    sCoreUtilsComponent = DaggerCoreUtilsComponent.builder().build();
+                }
+            }
+        }
+        return sCoreUtilsComponent;
     }
 
 }

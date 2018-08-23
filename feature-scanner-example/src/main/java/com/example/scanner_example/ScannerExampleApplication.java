@@ -16,7 +16,7 @@ public class ScannerExampleApplication extends Application {
         // component
         ScannerFeatureComponent.init(
             ScannerFeatureDependenciesFakeComponent.create(
-                CoreUtilsComponent.createOnce()
+                CoreUtilsComponent.get()
             )
         );
     }

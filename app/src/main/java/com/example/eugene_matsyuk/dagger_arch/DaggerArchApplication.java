@@ -4,9 +4,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.arellomobile.mvp.RegisterMoxyReflectorPackages;
-import com.example.core.di.app.CoreUtilsComponent;
-import com.example.core_db_impl.di.CoreDbComponent;
-import com.example.core_network_impl.di.CoreNetworkComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.app.AppComponent;
 import com.example.eugene_matsyuk.dagger_arch.di.app.DaggerAppComponent;
 import com.example.eugene_matsyuk.dagger_arch.routing.GlobalNavigator;
@@ -40,9 +37,6 @@ public class DaggerArchApplication extends Application {
         sContext = getApplicationContext();
         AppComponent.init(
             DaggerAppComponent.builder()
-                .coreDbApi(CoreDbComponent.createOnce())
-                .coreNetworkApi(CoreNetworkComponent.createOnce())
-                .coreUtilsApi(CoreUtilsComponent.createOnce())
                 .build()
         );
         AppComponent.get().inject(this);

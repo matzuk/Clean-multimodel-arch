@@ -10,12 +10,17 @@ import dagger.Component;
 @Singleton
 public abstract class CoreDbComponent implements CoreDbApi {
 
-    /**
-     * Call only one time!
-     * @return CoreDbComponent
-     */
-    public static CoreDbComponent createOnce() {
-        return DaggerCoreDbComponent.builder().build();
+    private static volatile CoreDbComponent sCoreDbComponent;
+
+    public static CoreDbComponent get() {
+        if (sCoreDbComponent == null) {
+            synchronized (CoreDbComponent.class) {
+                if (sCoreDbComponent == null) {
+                    sCoreDbComponent = DaggerCoreDbComponent.builder().build();
+                }
+            }
+        }
+        return sCoreDbComponent;
     }
 
 }

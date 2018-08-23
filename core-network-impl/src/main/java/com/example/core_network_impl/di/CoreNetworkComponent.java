@@ -10,12 +10,17 @@ import dagger.Component;
 @Singleton
 public abstract class CoreNetworkComponent implements CoreNetworkApi {
 
-    /**
-     * Call only one time!
-     * @return CoreNetworkComponent
-     */
-    public static CoreNetworkComponent createOnce() {
-        return DaggerCoreNetworkComponent.builder().build();
+    private static volatile CoreNetworkComponent sCoreNetworkComponent;
+
+    public static CoreNetworkComponent get() {
+        if (sCoreNetworkComponent == null) {
+            synchronized (CoreNetworkComponent.class) {
+                if (sCoreNetworkComponent == null) {
+                    sCoreNetworkComponent = DaggerCoreNetworkComponent.builder().build();
+                }
+            }
+        }
+        return sCoreNetworkComponent;
     }
 
 }
