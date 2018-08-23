@@ -22,8 +22,8 @@ import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.commands.Command;
 import ru.terrakok.cicerone.commands.Forward;
 
-import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.AV_SCREEN;
-import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.SCANNER_SCREEN;
+import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.AV_FEATURE;
+import static com.example.eugene_matsyuk.dagger_arch.routing.GlobalScreenNames.SCANNER_FEATURE;
 
 @Singleton
 public class GlobalNavigator implements Navigator {
@@ -59,10 +59,10 @@ public class GlobalNavigator implements Navigator {
     private void startFeatureStartPoint(String name) {
         Class<?> cls;
         switch (name) {
-            case SCANNER_SCREEN:
+            case SCANNER_FEATURE:
                 cls = ScannerActivity.class;
                 break;
-            case AV_SCREEN:
+            case AV_FEATURE:
                 cls = AntitheftActivity.class;
                 break;
             default: throw new RuntimeException("Unexpected screen: " + name);
@@ -74,10 +74,10 @@ public class GlobalNavigator implements Navigator {
 
     private void initFeatureComponent(String name) {
         switch (name) {
-            case SCANNER_SCREEN:
+            case SCANNER_FEATURE:
                 initDependenciesForScanner();
                 break;
-            case AV_SCREEN:
+            case AV_FEATURE:
                 initDependenciesForAt();
                 break;
             default: throw new RuntimeException("Unexpected screen: " + name);
@@ -113,6 +113,5 @@ public class GlobalNavigator implements Navigator {
             )
         );
     }
-
 
 }
