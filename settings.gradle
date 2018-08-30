@@ -1,6 +1,6 @@
 include ':app', ':feature-scanner-example', ':core-network-api', ':core-network-impl', ':core-db-api', ':core-db-impl', ':adapter', ':feature-scanner-api',
         ':core-utils',
-        ':feature-scanner',
+        ':feature-scanner-impl',
         ':feature-purchase-api',
         ':feature-purchase-impl',
         ':feature-antitheft'

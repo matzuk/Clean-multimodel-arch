@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-    implementation project(':feature-scanner')
+    implementation project(':feature-scanner-impl')
     implementation project(':feature-purchase-api')
     implementation project(':core-utils')
     implementation project(':core-network-api')
