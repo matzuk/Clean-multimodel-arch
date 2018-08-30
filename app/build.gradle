@@ -26,7 +26,6 @@ dependencies {
     implementation project(':adapter')
     implementation project(':core-utils')
     implementation project(':core-db-api')
-    implementation project(':core-db-impl')
     implementation project(':core-network-api')
     implementation project(':feature-purchase-api')
     implementation project(':feature-scanner')
