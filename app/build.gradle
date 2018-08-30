@@ -23,13 +23,12 @@ android {
 }
 
 dependencies {
+    implementation project(':adapter')
     implementation project(':core-utils')
     implementation project(':core-db-api')
     implementation project(':core-db-impl')
     implementation project(':core-network-api')
-    implementation project(':core-network-impl')
     implementation project(':feature-purchase-api')
-    implementation project(':feature-purchase-impl')
     implementation project(':feature-scanner')
     implementation project(':feature-antitheft')
 

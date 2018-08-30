@@ -3,14 +3,13 @@ package com.example.eugene_matsyuk.dagger_arch.routing;
 import android.content.Context;
 import android.content.Intent;
 
+import com.example.adapter.CoreNetworkProxy;
+import com.example.adapter.FeaturePurchaseProxy;
 import com.example.antitheft.di.AntitheftFeatureComponent;
 import com.example.antitheft.di.AntitheftFeatureDependenciesComponent;
 import com.example.antitheft.presentation.view.AntitheftActivity;
 import com.example.core.di.app.CoreUtilsComponent;
 import com.example.core_db_impl.di.CoreDbComponent;
-import com.example.core_network_impl.di.CoreNetworkComponent;
-import com.example.purchase_impl.di.DaggerPurchaseFeatureDependenciesComponent;
-import com.example.purchase_impl.di.PurchaseComponent;
 import com.example.scanner.di.ScannerFeatureComponent;
 import com.example.scanner.di.ScannerFeatureDependenciesComponent;
 import com.example.scanner.presentation.view.ScannerActivity;
@@ -88,18 +87,10 @@ public class GlobalNavigator implements Navigator {
         AntitheftFeatureComponent.init(
             AntitheftFeatureDependenciesComponent.create(
                 CoreUtilsComponent.get(),
-                CoreNetworkComponent.get(),
+                CoreNetworkProxy.build(),
                 CoreDbComponent.get(),
-                createPurchaseComponent()
+                FeaturePurchaseProxy.build()
             )
-        );
-    }
-
-    private PurchaseComponent createPurchaseComponent() {
-        return PurchaseComponent.create(
-            DaggerPurchaseFeatureDependenciesComponent.builder()
-                .coreNetworkApi(CoreNetworkComponent.get())
-                .build()
         );
     }
 
@@ -107,9 +98,9 @@ public class GlobalNavigator implements Navigator {
         ScannerFeatureComponent.init(
             ScannerFeatureDependenciesComponent.create(
                 CoreUtilsComponent.get(),
-                CoreNetworkComponent.get(),
+                CoreNetworkProxy.build(),
                 CoreDbComponent.get(),
-                createPurchaseComponent()
+                FeaturePurchaseProxy.build()
             )
         );
     }
