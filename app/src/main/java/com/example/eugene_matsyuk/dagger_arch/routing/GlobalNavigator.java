@@ -1,17 +1,8 @@
 package com.example.eugene_matsyuk.dagger_arch.routing;
 
 import android.content.Context;
-import android.content.Intent;
 
-import com.example.adapter.CoreProxy;
-import com.example.adapter.FeaturePurchaseProxy;
-import com.example.antitheft.di.AntitheftFeatureComponent;
-import com.example.antitheft.di.AntitheftFeatureDependenciesComponent;
-import com.example.antitheft.presentation.view.AntitheftActivity;
-import com.example.core.di.app.CoreUtilsComponent;
-import com.example.scanner.di.ScannerFeatureComponent;
-import com.example.scanner.di.ScannerFeatureDependenciesComponent;
-import com.example.scanner.presentation.view.ScannerActivity;
+import com.example.adapter.FeatureProxy;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -50,58 +41,19 @@ public class GlobalNavigator implements Navigator {
 
     private void forward(Forward command) {
         String name = command.getScreenKey();
-        initFeatureComponent(name);
         startFeatureStartPoint(name);
     }
 
     private void startFeatureStartPoint(String name) {
-        Class<?> cls;
         switch (name) {
             case SCANNER_FEATURE:
-                cls = ScannerActivity.class;
-                break;
+                FeatureProxy.featureScannerStart(mContext);
+                return;
             case AV_FEATURE:
-                cls = AntitheftActivity.class;
-                break;
+                FeatureProxy.featureAntitheftStart(mContext);
+                return;
             default: throw new RuntimeException("Unexpected screen: " + name);
         }
-        Intent intent = new Intent(mContext, cls);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(intent);
-    }
-
-    private void initFeatureComponent(String name) {
-        switch (name) {
-            case SCANNER_FEATURE:
-                initDependenciesForScanner();
-                break;
-            case AV_FEATURE:
-                initDependenciesForAt();
-                break;
-            default: throw new RuntimeException("Unexpected screen: " + name);
-        }
-    }
-
-    private void initDependenciesForAt() {
-        AntitheftFeatureComponent.init(
-            AntitheftFeatureDependenciesComponent.create(
-                CoreUtilsComponent.get(),
-                CoreProxy.coreNetworkBuild(),
-                CoreProxy.coreDbBuild(),
-                FeaturePurchaseProxy.build()
-            )
-        );
-    }
-
-    private void initDependenciesForScanner() {
-        ScannerFeatureComponent.init(
-            ScannerFeatureDependenciesComponent.create(
-                CoreUtilsComponent.get(),
-                CoreProxy.coreNetworkBuild(),
-                CoreProxy.coreDbBuild(),
-                FeaturePurchaseProxy.build()
-            )
-        );
     }
 
 }

@@ -1,6 +1,10 @@
 package com.example.scanner.di;
 
+import com.example.core.di.app.CoreUtilsApi;
 import com.example.core.di.general.PerFeature;
+import com.example.core_db_api.di.CoreDbApi;
+import com.example.core_network_api.di.CoreNetworkApi;
+import com.example.purchase_api.di.PurchaseFeatureApi;
 import com.example.scanner.presentation.view.ScannerActivity;
 
 import dagger.Component;
@@ -34,5 +38,14 @@ public abstract class ScannerFeatureComponent {
     public abstract void inject(ScannerActivity scannerActivity);
 
     public abstract ScannerScreenComponent scannerScreenComponent();
+
+    @Component(dependencies = {
+        CoreUtilsApi.class,
+        CoreNetworkApi.class,
+        CoreDbApi.class,
+        PurchaseFeatureApi.class
+    })
+    @PerFeature
+    interface ScannerFeatureDependenciesComponent extends ScannerFeatureDependencies { }
 
 }

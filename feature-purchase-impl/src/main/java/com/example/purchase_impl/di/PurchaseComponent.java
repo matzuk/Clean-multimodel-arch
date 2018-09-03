@@ -4,6 +4,8 @@ import com.example.core.di.general.PerFeature;
 import com.example.core_network_api.di.CoreNetworkApi;
 import com.example.purchase_api.di.PurchaseFeatureApi;
 
+import java.lang.ref.WeakReference;
+
 import dagger.Component;
 
 @Component(
@@ -13,10 +15,20 @@ import dagger.Component;
 @PerFeature
 public abstract class PurchaseComponent implements PurchaseFeatureApi {
 
-    public static PurchaseComponent create(PurchaseFeatureDependencies purchaseFeatureDependencies) {
-        return DaggerPurchaseComponent.builder()
-            .purchaseFeatureDependencies(purchaseFeatureDependencies)
-            .build();
+    private static volatile WeakReference<PurchaseComponent> sPurchaseComponentWeak;
+
+    public static PurchaseComponent initAndGet(PurchaseFeatureDependencies purchaseFeatureDependencies) {
+        if (sPurchaseComponentWeak == null || sPurchaseComponentWeak.get() == null) {
+            synchronized (PurchaseComponent.class) {
+                if (sPurchaseComponentWeak == null || sPurchaseComponentWeak.get() == null) {
+                    PurchaseComponent purchaseComponent = DaggerPurchaseComponent.builder()
+                        .purchaseFeatureDependencies(purchaseFeatureDependencies)
+                        .build();
+                    sPurchaseComponentWeak = new WeakReference<>(purchaseComponent);
+                }
+            }
+        }
+        return sPurchaseComponentWeak.get();
     }
 
     @Component(dependencies = CoreNetworkApi.class)

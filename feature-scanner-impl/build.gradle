@@ -38,6 +38,7 @@ dependencies {
     implementation project(':core-network-api')
     implementation project(':core-db-api')
     implementation project(':feature-purchase-api')
+    implementation project(':feature-scanner-api')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
