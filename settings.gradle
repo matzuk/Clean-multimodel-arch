@@ -1,4 +1,7 @@
-include ':app', ':feature-scanner-api', ':feature-antitheft-api',
+include ':app',
+        ':feature-scanner-api',
+        ':feature-antitheft-api',
+        ':stub-moxy-java',
         ':feature-scanner-example',
         ':core-network-api',
         ':core-network-impl',
