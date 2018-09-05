@@ -13,7 +13,7 @@ public class ScannerExampleApplication extends Application {
     public void onCreate() {
         super.onCreate();
         // component
-        ScannerFeatureComponent.init(
+        ScannerFeatureComponent.initAndGet(
             new ScannerFeatureDependenciesFake()
         );
     }

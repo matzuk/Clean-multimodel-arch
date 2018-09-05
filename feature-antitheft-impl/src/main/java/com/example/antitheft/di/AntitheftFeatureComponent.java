@@ -5,6 +5,7 @@ import com.example.core.di.app.CoreUtilsApi;
 import com.example.core.di.general.PerFeature;
 import com.example.core_db_api.di.CoreDbApi;
 import com.example.core_network_api.di.CoreNetworkApi;
+import com.example.feature_antitheft_api.AntitheftFeatureApi;
 import com.example.purchase_api.di.PurchaseFeatureApi;
 
 import dagger.Component;
@@ -14,19 +15,26 @@ import dagger.Component;
     AntitheftNavigationModule.class
 }, dependencies = AntitheftFeatureDependencies.class)
 @PerFeature
-public abstract class AntitheftFeatureComponent {
+public abstract class AntitheftFeatureComponent implements AntitheftFeatureApi {
 
     private static volatile AntitheftFeatureComponent sAntitheftFeatureComponent;
 
-    public static void init(AntitheftFeatureDependencies antitheftFeatureDependencies) {
-        sAntitheftFeatureComponent = DaggerAntitheftFeatureComponent.builder()
-            .antitheftFeatureDependencies(antitheftFeatureDependencies)
-            .build();
+    public static AntitheftFeatureApi initAndGet(AntitheftFeatureDependencies antitheftFeatureDependencies) {
+        if (sAntitheftFeatureComponent == null) {
+            synchronized (AntitheftFeatureComponent.class) {
+                if (sAntitheftFeatureComponent == null) {
+                    sAntitheftFeatureComponent = DaggerAntitheftFeatureComponent.builder()
+                        .antitheftFeatureDependencies(antitheftFeatureDependencies)
+                        .build();
+                }
+            }
+        }
+        return sAntitheftFeatureComponent;
     }
 
     public static AntitheftFeatureComponent get() {
         if (sAntitheftFeatureComponent == null) {
-            throw new RuntimeException("You must call 'init(AntitheftFeatureDependencies antitheftFeatureDependencies)' method");
+            throw new RuntimeException("You must call 'initAndGet(AntitheftFeatureDependencies antitheftFeatureDependencies)' method");
         }
         return sAntitheftFeatureComponent;
     }

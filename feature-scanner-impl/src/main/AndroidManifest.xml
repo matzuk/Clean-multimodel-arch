@@ -1,4 +1,6 @@
-<manifest package="com.example.scanner" xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="com.example.scanner"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
