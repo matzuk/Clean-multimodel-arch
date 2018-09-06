@@ -23,12 +23,17 @@ android {
 }
 
 dependencies {
-    compileOnly project(":stub-moxy-java")
-    implementation project(':adapter')
     implementation project(':core-utils')
+    implementation project(':core-db-api')
+    implementation project(':core-db-impl')
+    implementation project(':core-network-api')
+    implementation project(':core-network-impl')
     implementation project(':feature-scanner-api')
+    implementation project(':feature-scanner-impl')
     implementation project(':feature-antitheft-api')
-
+    implementation project(':feature-antitheft-impl')
+    implementation project(':feature-purchase-api')
+    implementation project(':feature-purchase-impl')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0-rc01'

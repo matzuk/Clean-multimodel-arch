@@ -1,4 +1,4 @@
-package com.example.adapter;
+package com.example.eugene_matsyuk.dagger_arch.di;
 
 import com.example.antitheft.di.AntitheftFeatureComponent;
 import com.example.antitheft.di.DaggerAntitheftFeatureComponent_AntitheftFeatureDependenciesComponent;

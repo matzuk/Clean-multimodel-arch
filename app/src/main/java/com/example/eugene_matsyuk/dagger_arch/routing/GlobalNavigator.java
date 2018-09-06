@@ -2,7 +2,7 @@ package com.example.eugene_matsyuk.dagger_arch.routing;
 
 import android.content.Context;
 
-import com.example.adapter.FeatureProxyInjector;
+import com.example.eugene_matsyuk.dagger_arch.di.FeatureProxyInjector;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
