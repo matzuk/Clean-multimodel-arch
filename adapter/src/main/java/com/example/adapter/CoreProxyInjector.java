@@ -5,7 +5,7 @@ import com.example.core_db_impl.di.CoreDbComponent;
 import com.example.core_network_api.di.CoreNetworkApi;
 import com.example.core_network_impl.di.CoreNetworkComponent;
 
-public class CoreProxy {
+public class CoreProxyInjector {
 
     public static CoreNetworkApi coreNetworkBuild() {
         return CoreNetworkComponent.get();

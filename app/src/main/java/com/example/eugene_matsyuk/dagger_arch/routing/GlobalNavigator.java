@@ -2,7 +2,7 @@ package com.example.eugene_matsyuk.dagger_arch.routing;
 
 import android.content.Context;
 
-import com.example.adapter.FeatureProxy;
+import com.example.adapter.FeatureProxyInjector;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -47,10 +47,10 @@ public class GlobalNavigator implements Navigator {
     private void startFeatureStartPoint(String name) {
         switch (name) {
             case SCANNER_FEATURE:
-                FeatureProxy.getFeatureScanner().scannerStarter().start(mContext);
+                FeatureProxyInjector.getFeatureScanner().scannerStarter().start(mContext);
                 return;
             case AV_FEATURE:
-                FeatureProxy.getFeatureAntitheft().antitheftStarter().start(mContext);
+                FeatureProxyInjector.getFeatureAntitheft().antitheftStarter().start(mContext);
                 return;
             default: throw new RuntimeException("Unexpected screen: " + name);
         }

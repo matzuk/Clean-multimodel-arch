@@ -13,7 +13,7 @@ import com.example.purchase_impl.di.PurchaseComponent;
 import com.example.scanner.di.DaggerScannerFeatureComponent_ScannerFeatureDependenciesComponent;
 import com.example.scanner.di.ScannerFeatureComponent;
 
-public class FeatureProxy {
+public class FeatureProxyInjector {
 
     public static ScannerFeatureApi getFeatureScanner() {
         return ScannerFeatureComponent.initAndGet(
